@@ -1,0 +1,3 @@
+[submodule "vendor/findMFBase"]
+	path = vendor/findMFBase
+	url = git@github.com:findMF/findMFBase.git
