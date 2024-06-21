@@ -31,13 +31,14 @@ classifiers = [
   "Typing :: Typed",
 ]
 dependencies = [
-  "numpy"
+  "numpy",
 ]
 
 [project.optional-dependencies]
 test = [
   "pytest >=6",
   "pytest-cov >=3",
+  "matplotlib"
 ]
 dev = [
   "pytest >=6",
