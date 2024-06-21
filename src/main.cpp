@@ -1,5 +1,12 @@
 #include <pybind11/pybind11.h>
 
+#include "base/base/base.h"
+#include "base/base/cumsum.h"
+#include "base/ms/generatesamplespec.h"
+#include "base/ms/peakpickerqtof.h"
+#include "base/stats/normal.h"
+#include <boost/test/unit_test.hpp>
+
 int add(int i, int j) { return i + j; }
 
 namespace py = pybind11;
