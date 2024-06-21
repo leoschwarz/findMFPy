@@ -30,7 +30,9 @@ classifiers = [
   "Topic :: Scientific/Engineering",
   "Typing :: Typed",
 ]
-dependencies = []
+dependencies = [
+  "numpy"
+]
 
 [project.optional-dependencies]
 test = [
