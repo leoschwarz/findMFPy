@@ -1,0 +1,12 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 2024.04.23
+_src_path: gh:scientific-python/cookie
+backend: skbuild
+email: leonardo.schwarz@fgcz.ethz.ch
+full_name: Leonardo Schwarz
+license: BSD
+org: findMF
+project_name: findMFPy
+project_short_description: Python bindings to findMF
+url: https://github.com/findMF/findMFPy
+vcs: false
