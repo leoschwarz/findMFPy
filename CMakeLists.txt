@@ -98,7 +98,6 @@ set(BOOST_LIBS
     histogram
     hof
     icl
-    index.html
     integer
     interprocess
     intrusive
@@ -110,13 +109,11 @@ set(BOOST_LIBS
     lambda2
     leaf
     lexical_cast
-    libraries.htm
     local_function
     locale
     lockfree
     log
     logic
-    maintainers.txt
     math
     metaparse
     move
@@ -136,7 +133,6 @@ set(BOOST_LIBS
     parameter_python
     pfr
     phoenix
-    platform_maintainers.txt
     poly_collection
     polygon
     pool
