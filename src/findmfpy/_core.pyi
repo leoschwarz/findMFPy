@@ -1,8 +1,5 @@
 from __future__ import annotations
 
-def add(_x: int, _y: int) -> int: ...
-def subtract(_x: int, _y: int) -> int: ...
-
 # TODO
 # def pick_peaks(
 #    _mz_arr: NDArray[float],
