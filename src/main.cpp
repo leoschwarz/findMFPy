@@ -48,8 +48,6 @@ auto pick_peaks_diagnostic(const py::array_t<double> &mz_arr,
                            const bool area, const uint32_t max_peaks) {
   auto pp = pick_peaks_generic(mz_arr, int_arr, resolution, width, int_width,
                                int_threshold, area, max_peaks);
-  //  return std::make_tuple(pp.getPeakMass(), pp.getPeakArea());
-
   return std::make_tuple(pp.getPeakMass(), pp.getPeakArea(),
                          pp.getResampledMZ(), pp.getResampledIntensity(),
                          pp.getSmoothedIntensity());
