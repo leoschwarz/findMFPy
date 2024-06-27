@@ -108,6 +108,7 @@ disallow_incomplete_defs = true
 
 [tool.ruff]
 src = ["src"]
+line-length = 120
 
 [tool.ruff.lint]
 extend-select = [

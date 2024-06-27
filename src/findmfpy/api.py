@@ -1,10 +1,21 @@
 from __future__ import annotations
-from numpy.typing import NDArray
+
 import numpy as np
+from numpy.typing import NDArray
+
 from findmfpy import _core
 
 
-def pick_peaks(mz_arr: NDArray[np.float64], int_arr: NDArray[np.float64], resolution: float = 10000.0, width: float = 2.0, int_width: float = 2.0, int_threshold: float = 10.0, area: bool = True, max_peaks: int = 0) -> tuple[NDArray[np.float64], NDArray[np.float64]]:
+def pick_peaks(
+    mz_arr: NDArray[np.float64],
+    int_arr: NDArray[np.float64],
+    resolution: float = 10000.0,
+    width: float = 2.0,
+    int_width: float = 2.0,
+    int_threshold: float = 10.0,
+    area: bool = True,
+    max_peaks: int = 0,
+) -> tuple[NDArray[np.float64], NDArray[np.float64]]:
     """
     Pick peaks from a mass spectrum.
 

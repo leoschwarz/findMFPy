@@ -19,9 +19,7 @@ def lint(session: nox.Session) -> None:
     Run the linter.
     """
     session.install("pre-commit")
-    session.run(
-        "pre-commit", "run", "--all-files", "--show-diff-on-failure", *session.posargs
-    )
+    session.run("pre-commit", "run", "--all-files", "--show-diff-on-failure", *session.posargs)
 
 
 @nox.session
@@ -52,9 +50,7 @@ def docs(session: nox.Session) -> None:
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--serve", action="store_true", help="Serve after building")
-    parser.add_argument(
-        "-b", dest="builder", default="html", help="Build target (default: html)"
-    )
+    parser.add_argument("-b", dest="builder", default="html", help="Build target (default: html)")
     args, posargs = parser.parse_known_args(session.posargs)
 
     if args.builder != "html" and args.serve:
@@ -66,9 +62,7 @@ def docs(session: nox.Session) -> None:
     session.chdir("docs")
 
     if args.builder == "linkcheck":
-        session.run(
-            "sphinx-build", "-b", "linkcheck", ".", "_build/linkcheck", *posargs
-        )
+        session.run("sphinx-build", "-b", "linkcheck", ".", "_build/linkcheck", *posargs)
         return
 
     shared_args = (
