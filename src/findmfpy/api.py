@@ -61,4 +61,6 @@ def pick_peaks(
     max_peaks = int(max_peaks)
 
     # call the c++ function
-    return _core.pick_peaks(mz_arr, int_arr, resolution, width, int_width, int_threshold, area, max_peaks)
+    mz_arr, int_arr = _core.pick_peaks(mz_arr, int_arr, resolution, width, int_width, int_threshold, area, max_peaks)
+    # (making mypy happy)
+    return np.asarray(mz_arr), np.asarray(int_arr)
