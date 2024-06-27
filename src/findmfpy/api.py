@@ -15,7 +15,11 @@ def pick_peaks(
     int_threshold: float = 10.0,
     area: bool = True,
     max_peaks: int = 0,
-) -> tuple[NDArray[np.float64], NDArray[np.float64]]:
+    return_diagnostics: bool = False,
+) -> (
+    tuple[NDArray[np.float64], NDArray[np.float64]]
+    | tuple[NDArray[np.float64], NDArray[np.float64], dict[str, NDArray[np.float64]]]
+):
     """
     Pick peaks from a mass spectrum.
 
@@ -37,11 +41,14 @@ def pick_peaks(
         Whether to calculate the area instead of intensity, by default True
     max_peaks : int, optional
         The maximum number of peaks to return, by default 0
+    return_diagnostics : bool, optional
+        Whether to return diagnostic information, by default False
 
     Returns
     -------
-    tuple[numpy.ndarray, numpy.ndarray]
+    tuple[numpy.ndarray, numpy.ndarray] or tuple[numpy.ndarray, numpy.ndarray, dict[str, numpy.ndarray]]
         The m/z and intensity arrays of the peaks.
+        If `return_diagnostics` is True, a dictionary with diagnostic information is also returned.
     """
     # validate inputs extensively, as passing invalid data to the c++ code can segfault!
     # some of the conversions would be handled automatically by pybind11
@@ -61,6 +68,20 @@ def pick_peaks(
     max_peaks = int(max_peaks)
 
     # call the c++ function
-    mz_arr, int_arr = _core.pick_peaks(mz_arr, int_arr, resolution, width, int_width, int_threshold, area, max_peaks)
-    # (making mypy happy)
-    return np.asarray(mz_arr), np.asarray(int_arr)
+    if not return_diagnostics:
+        mz_arr, int_arr = _core.pick_peaks(
+            mz_arr, int_arr, resolution, width, int_width, int_threshold, area, max_peaks
+        )
+        # (making mypy happy)
+        return np.asarray(mz_arr), np.asarray(int_arr)
+    else:
+        diagnostics = {}
+        (
+            mz_arr,
+            int_arr,
+            diagnostics["resampled_mz_arr"],
+            diagnostics["resample_int_arr"],
+            diagnostics["smoothed_int_arr"],
+        ) = _core.pick_peaks_diagnostic(mz_arr, int_arr, resolution, width, int_width, int_threshold, area, max_peaks)
+        diagnostics = {k: np.asarray(v) for k, v in diagnostics.items()}
+        return np.asarray(mz_arr), np.asarray(int_arr), diagnostics
