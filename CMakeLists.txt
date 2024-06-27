@@ -19,9 +19,8 @@ find_package(pybind11 CONFIG REQUIRED)
 # ${CMAKE_SOURCE_DIR}/vendor/boost/libs/iostreams/include
 # ${CMAKE_SOURCE_DIR}/vendor/boost/libs/thread/include
 # ${CMAKE_SOURCE_DIR}/vendor/boost/libs/regex/include
-# ${CMAKE_SOURCE_DIR}/vendor/boost/libs/program_options/include #
-# TODO maybe optional
-# ${CMAKE_SOURCE_DIR}/vendor/boost/libs/unit_test_framework/include
+# ${CMAKE_SOURCE_DIR}/vendor/boost/libs/program_options/include # TODO maybe
+# optional ${CMAKE_SOURCE_DIR}/vendor/boost/libs/unit_test_framework/include
 # addde while trying to make it work
 # ${CMAKE_SOURCE_DIR}/vendor/boost/libs/config/include
 # ${CMAKE_SOURCE_DIR}/vendor/boost/libs/bind/include
