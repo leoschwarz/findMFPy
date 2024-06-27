@@ -48,9 +48,11 @@ def pick_peaks(
     mz_arr = np.ascontiguousarray(np.asarray(mz_arr, dtype=float))
     int_arr = np.ascontiguousarray(np.asarray(int_arr, dtype=float))
     if mz_arr.shape != int_arr.shape:
-        raise ValueError("mz_arr and int_arr must have the same shape")
+        msg = f"{mz_arr.shape=} is not equal to {int_arr.shape=}"
+        raise ValueError(msg)
     if mz_arr.ndim != 1:
-        raise ValueError("mz_arr must be 1D")
+        msg = f"{mz_arr.ndim=} is not 1"
+        raise ValueError(msg)
     resolution = float(resolution)
     width = float(width)
     int_width = float(int_width)
