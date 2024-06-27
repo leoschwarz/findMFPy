@@ -99,6 +99,9 @@ enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
 warn_unreachable = true
 disallow_untyped_defs = false
 disallow_incomplete_defs = false
+plugins = [
+  "numpy.typing.mypy_plugin"
+]
 
 [[tool.mypy.overrides]]
 module = "findmfpy.*"
@@ -161,4 +164,5 @@ messages_control.disable = [
   "missing-module-docstring",
   "missing-function-docstring",
   "wrong-import-position",
+  "unpacking-non-sequence",
 ]
