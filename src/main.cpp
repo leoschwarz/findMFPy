@@ -36,14 +36,8 @@ auto pick_peaks(const py::array_t<double> &mz_arr,
                 const double width, const double int_width,
                 const double int_threshold, const bool area,
                 const uint32_t max_peaks) {
-  std::vector<double> mz_vec(mz_arr.data(), mz_arr.data() + mz_arr.size());
-  std::vector<double> int_vec(int_arr.data(), int_arr.data() + int_arr.size());
-
-  std::pair<double, double> massrange =
-      std::make_pair(mz_vec.front(), mz_vec.back());
-  PeakPicker pp(resolution, massrange, width, int_width, int_threshold, area,
-                max_peaks);
-  pp(mz_vec.begin(), mz_vec.end(), int_vec.begin());
+  auto pp = pick_peaks_generic(mz_arr, int_arr, resolution, width, int_width,
+                               int_threshold, area, max_peaks);
   return std::make_tuple(pp.getPeakMass(), pp.getPeakArea());
 }
 
