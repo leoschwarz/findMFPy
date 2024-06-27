@@ -4,3 +4,6 @@
 [submodule "vendor/boost"]
 	path = vendor/boost
 	url = https://github.com/boostorg/boost.git
+[submodule "vendor/boost-core"]
+	path = vendor/boost-core
+	url = https://github.com/boostorg/core.git
