@@ -12,12 +12,12 @@
 <!-- SPHINX-START -->
 
 <!-- prettier-ignore-start -->
-[actions-badge]:            https://github.com/findMF/findMFPy/workflows/CI/badge.svg
-[actions-link]:             https://github.com/findMF/findMFPy/actions
+[actions-badge]:            https://github.com/leoschwarz/findMFPy/workflows/CI/badge.svg
+[actions-link]:             https://github.com/leoschwarz/findMFPy/actions
 [conda-badge]:              https://img.shields.io/conda/vn/conda-forge/findMFPy
 [conda-link]:               https://github.com/conda-forge/findMFPy-feedstock
 [github-discussions-badge]: https://img.shields.io/static/v1?label=Discussions&message=Ask&color=blue&logo=github
-[github-discussions-link]:  https://github.com/findMF/findMFPy/discussions
+[github-discussions-link]:  https://github.com/leoschwarz/findMFPy/discussions
 [pypi-link]:                https://pypi.org/project/findMFPy/
 [pypi-platforms]:           https://img.shields.io/pypi/pyversions/findMFPy
 [pypi-version]:             https://img.shields.io/pypi/v/findMFPy
