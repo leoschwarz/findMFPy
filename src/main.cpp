@@ -11,12 +11,14 @@
 int add(int i, int j) { return i + j; }
 
 auto pick_peaks(const std::vector<double> &mz_arr,
-                const std::vector<double> &int_arr) {
-  const double resolution = 10000;
+                const std::vector<double> &int_arr,
+                const double resolution = 10000, const double width = 2.0,
+                const double int_width = 2.0, const double int_threshold = 10.0,
+                const bool area = true, const uint32_t max_peaks = 0) {
   std::pair<double, double> massrange =
       std::make_pair(mz_arr.front(), mz_arr.back());
   ralab::base::ms::PeakPicker<double, ralab::base::ms::SimplePeakArea> pp(
-      resolution, massrange);
+      resolution, massrange, width, int_width, int_threshold, area, max_peaks);
   pp(mz_arr.begin(), mz_arr.end(), int_arr.begin());
 
   return std::make_tuple(pp.getPeakMass(), pp.getPeakArea());
