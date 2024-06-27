@@ -24,14 +24,12 @@ if(Boost_FOUND)
 endif()
 include_directories(${CMAKE_SOURCE_DIR}/vendor/findMFBase/include)
 
-find_package(ZSTD REQUIRED)
-if(ZSTD_FOUND)
-  include_directories(${ZSTD_INCLUDE_DIRS})
-endif()
+# find_package(ZSTD REQUIRED) if(ZSTD_FOUND)
+# include_directories(${ZSTD_INCLUDE_DIRS}) endif()
 
 pybind11_add_module(_core MODULE src/main.cpp)
-target_link_libraries(_core PRIVATE ${Boost_LIBRARIES})
-target_link_libraries(_core PRIVATE ${ZSTD_LIBRARIES})
+# target_link_libraries(_core PRIVATE ${Boost_LIBRARIES})
+# target_link_libraries(_core PRIVATE ${ZSTD_LIBRARIES})
 install(TARGETS _core DESTINATION ${SKBUILD_PROJECT_NAME})
 
 # Add the subdirectory for the findMFBase project
