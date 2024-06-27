@@ -1,3 +1,6 @@
 [submodule "vendor/findMFBase"]
 	path = vendor/findMFBase
-	url = git@github.com:findMF/findMFBase.git
+	url = https://github.com/findMF/findMFBase.git
+[submodule "vendor/boost"]
+	path = vendor/boost
+	url = https://github.com/boostorg/boost.git
