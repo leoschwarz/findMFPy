@@ -46,6 +46,6 @@ def test_pick_peaks_diagnostic_when_defaults(profile_spectrum: SpectrumType) -> 
     assert len(diagnostics["resampled_mz_arr"]) == len(diagnostics["resample_int_arr"])
     assert len(diagnostics["resampled_mz_arr"]) == len(diagnostics["smoothed_int_arr"])
 
+
 if __name__ == "__main__":
     pytest.main()
-    
