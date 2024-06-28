@@ -62,7 +62,7 @@ Changelog = "https://github.com/findMF/findMFPy/releases"
 [tool.scikit-build]
 minimum-version = "0.4"
 build-dir = "build/{wheel_tag}"
-
+cmake.build-type = "RelWithDebInfo"
 
 [tool.cibuildwheel]
 test-command = "pytest {project}/tests"
