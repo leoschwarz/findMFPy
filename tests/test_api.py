@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 from numpy.typing import NDArray
 
-from findmfpy.api import pick_peaks
+from findmfpy.api import pick_peaks, pick_peaks_diagnostic
 
 SpectrumType = Tuple[NDArray[np.float64], NDArray[np.float64]]
 
@@ -37,9 +37,9 @@ def test_pick_peaks_when_defaults(profile_spectrum: SpectrumType) -> None:
     assert len(mz_peak) == len(int_peak)
 
 
-def test_pick_peaks_when_defaults_and_return_diagnostics(profile_spectrum: SpectrumType) -> None:
+def test_pick_peaks_diagnostic_when_defaults(profile_spectrum: SpectrumType) -> None:
     mz_arr, int_arr = profile_spectrum
-    mz_peak, int_peak, diagnostics = pick_peaks(mz_arr, int_arr, return_diagnostics=True)
+    mz_peak, int_peak, diagnostics = pick_peaks_diagnostic(mz_arr, int_arr)
     assert set(np.round(mz_peak)) == {1020, 1050, 1100}
     assert len(mz_peak) == len(int_peak)
     assert set(diagnostics.keys()) == {"resampled_mz_arr", "resample_int_arr", "smoothed_int_arr"}
