@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // requires: https://github.com/vadimcn/codelldb
+            "name": "(lldb) Python: Current File",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceRoot}/.venv/bin/python",
+            "args": ["${file}"],
+            "cwd": "${fileDirname}",
+        }
+    ]
+}
