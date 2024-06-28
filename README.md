@@ -25,3 +25,6 @@
 [rtd-link]:                 https://findMFPy.readthedocs.io/en/latest/?badge=latest
 
 <!-- prettier-ignore-end -->
+
+## Basic usage
+See `tests/test_api.py` for now.
