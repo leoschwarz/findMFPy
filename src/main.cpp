@@ -55,7 +55,7 @@ auto pick_peaks_diagnostic(const py::array_t<double> &mz_arr,
 
 PYBIND11_MODULE(_core, m) {
   m.doc() = R"pbdoc(
-      Pybind11 example plugin
+      Internal bindings (not public API) for findmfpy.
       -----------------------
       .. currentmodule:: python_example
       .. autosummary::
