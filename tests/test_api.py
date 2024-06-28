@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 from numpy.typing import NDArray
 
-from findmfpy.api import pick_peaks, pick_peaks_diagnostic
+from findmfpy import pick_peaks, pick_peaks_diagnostic
 
 SpectrumType = Tuple[NDArray[np.float64], NDArray[np.float64]]
 
