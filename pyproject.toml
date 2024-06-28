@@ -38,7 +38,6 @@ dependencies = [
 test = [
   "pytest >=6",
   "pytest-cov >=3",
-  "matplotlib"
 ]
 dev = [
   "pytest >=6",

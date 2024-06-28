@@ -27,4 +27,7 @@
 <!-- prettier-ignore-end -->
 
 ## Basic usage
+Clone with recursive submodules, i.e. `git clone --recursive`.
+Pip install the package, if you want to develop `pip install -e ".[dev]"`.
+
 See `tests/test_api.py` for now.
