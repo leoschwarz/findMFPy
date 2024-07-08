@@ -130,7 +130,7 @@ def pick_peaks_diagnostic(
         mz_arr,
         int_arr,
         diagnostics["resampled_mz_arr"],
-        diagnostics["resample_int_arr"],
+        diagnostics["resampled_int_arr"],
         diagnostics["smoothed_int_arr"],
     ) = _core.pick_peaks_diagnostic(mz_arr, int_arr, resolution, width, int_width, int_threshold, area, max_peaks)
     diagnostics = {k: np.asarray(v) for k, v in diagnostics.items()}

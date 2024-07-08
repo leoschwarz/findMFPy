@@ -42,8 +42,8 @@ def test_pick_peaks_diagnostic_when_defaults(profile_spectrum: SpectrumType) -> 
     mz_peak, int_peak, diagnostics = pick_peaks_diagnostic(mz_arr, int_arr)
     assert set(np.round(mz_peak)) == {1020, 1050, 1100}
     assert len(mz_peak) == len(int_peak)
-    assert set(diagnostics.keys()) == {"resampled_mz_arr", "resample_int_arr", "smoothed_int_arr"}
-    assert len(diagnostics["resampled_mz_arr"]) == len(diagnostics["resample_int_arr"])
+    assert set(diagnostics.keys()) == {"resampled_mz_arr", "resampled_int_arr", "smoothed_int_arr"}
+    assert len(diagnostics["resampled_mz_arr"]) == len(diagnostics["resampled_int_arr"])
     assert len(diagnostics["resampled_mz_arr"]) == len(diagnostics["smoothed_int_arr"])
 
 
