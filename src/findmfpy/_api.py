@@ -46,32 +46,21 @@ def pick_peaks(
     area: bool = True,
     max_peaks: int = 0,
 ) -> tuple[NDArray[np.float64], NDArray[np.float64]]:
-    """
-    Pick peaks from a mass spectrum.
+    """Picks peaks from a mass spectrum.
 
-    Parameters
-    ----------
-    mz_arr : numpy.ndarray
-        The m/z array.
-    int_arr : numpy.ndarray
-        The intensity array.
-    resolution : float, optional
-        The resolution of the instrument, by default 10000.0
-    width : float, optional
-        The width of the peak, by default 2.0
-    int_width : float, optional
-        The width of the intensity, by default 2.0
-    int_threshold : float, optional
-        The intensity threshold, by default 10.0
-    area : bool, optional
-        Whether to calculate the area instead of intensity, by default True
-    max_peaks : int, optional
-        The maximum number of peaks to return, by default 0
+    Args:
+        mz_arr: The m/z array.
+        int_arr: The intensity array.
+        resolution: The resolution of the instrument.
+        width: The width of the peak.
+        int_width: The width of the intensity.
+        int_threshold: The intensity threshold.
+        area: Whether to calculate the area instead of intensity.
+        max_peaks: The maximum number of peaks to return.
 
-    Returns
-    -------
-    tuple[numpy.ndarray, numpy.ndarray]
-        The m/z and intensity arrays of the peaks.
+    Returns:
+        0: The m/z array of the peaks.
+        1: The intensity array of the peaks.
     """
     mz_arr, int_arr, resolution, width, int_width, int_threshold, area, max_peaks = _validate_inputs(
         mz_arr, int_arr, resolution, width, int_width, int_threshold, area, max_peaks
@@ -93,32 +82,22 @@ def pick_peaks_diagnostic(
     area: bool = True,
     max_peaks: int = 0,
 ) -> tuple[NDArray[np.float64], NDArray[np.float64], dict[str, NDArray[np.float64]]]:
-    """
-    Pick peaks from a mass spectrum.
+    """Picks peaks from a mass spectrum, and returns some additional diagnostic information of the peak picker.
 
-    Parameters
-    ----------
-    mz_arr : numpy.ndarray
-        The m/z array.
-    int_arr : numpy.ndarray
-        The intensity array.
-    resolution : float, optional
-        The resolution of the instrument, by default 10000.0
-    width : float, optional
-        The width of the peak, by default 2.0
-    int_width : float, optional
-        The width of the intensity, by default 2.0
-    int_threshold : float, optional
-        The intensity threshold, by default 10.0
-    area : bool, optional
-        Whether to calculate the area instead of intensity, by default True
-    max_peaks : int, optional
-        The maximum number of peaks to return, by default 0
+    Args:
+        mz_arr: The m/z array.
+        int_arr: The intensity array.
+        resolution: The resolution of the instrument.
+        width: The width of the peak.
+        int_width: The width of the intensity.
+        int_threshold: The intensity threshold.
+        area: Whether to calculate the area instead of intensity.
+        max_peaks: The maximum number of peaks to return.
 
-    Returns
-    -------
-    tuple[numpy.ndarray, numpy.ndarray, dict[str, numpy.ndarray]]
-        The m/z and intensity arrays of the peaks, and diagnostic info from the peak picker internals.
+    Returns:
+        0: The m/z array of the peaks.
+        1: The intensity array of the peaks.
+        2: Diagnostic information from the peak picker internals.
     """
     mz_arr, int_arr, resolution, width, int_width, int_threshold, area, max_peaks = _validate_inputs(
         mz_arr, int_arr, resolution, width, int_width, int_threshold, area, max_peaks

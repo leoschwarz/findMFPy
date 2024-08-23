@@ -1,17 +1,13 @@
-# Welcome to MkDocs
+# Start
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This package provides Python bindings to the peak picker from findMF.
 
-## Commands
+## Reference
 
-- `mkdocs new [dir-name]` - Create a new project.
-- `mkdocs serve` - Start the live-reloading docs server.
-- `mkdocs build` - Build the documentation site.
-- `mkdocs -h` - Print help message and exit.
+::: findmfpy.pick_peaks
+    options:
+        heading_level: 3
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+::: findmfpy.pick_peaks_diagnostic
+    options:
+        heading_level: 3

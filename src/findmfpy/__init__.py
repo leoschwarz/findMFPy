@@ -1,8 +1,5 @@
-"""
-Copyright (c) 2024 Leonardo Schwarz. All rights reserved.
-
-findMFPy: Python bindings to findMF
-"""
+# findMFPy: Python bindings to findMF
+# Copyright (c) 2024 Leonardo Schwarz. All rights reserved.
 
 from __future__ import annotations
 
