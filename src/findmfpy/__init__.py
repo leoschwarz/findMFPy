@@ -1,5 +1,5 @@
 # findMFPy: Python bindings to findMF
-# Copyright (c) 2024 Leonardo Schwarz. All rights reserved.
+# Copyright (c) 2024 ETH Zurich. All rights reserved.
 
 from __future__ import annotations
 
