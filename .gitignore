@@ -157,3 +157,4 @@ Thumbs.db
 *~
 *.swp
 .vscode/settings.json
+.idea
