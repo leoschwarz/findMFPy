@@ -17,7 +17,7 @@ def signal_masses() -> list[float]:
 
 
 def _gauss_pdf(x: NDArray[np.float64], mu: float, sigma: float) -> NDArray[np.float64]:
-    return np.exp(-((x - mu) ** 2) / (2 * sigma**2)) / (sigma * np.sqrt(2 * np.pi))  # type: ignore[no-any-return]
+    return np.exp(-((x - mu) ** 2) / (2 * sigma**2)) / (sigma * np.sqrt(2 * np.pi))
 
 
 @pytest.fixture()
