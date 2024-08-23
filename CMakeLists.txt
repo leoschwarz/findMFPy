@@ -5,162 +5,26 @@ set(CMAKE_CXX_STANDARD 14)
 set(PYBIND11_FINDPYTHON ON)
 find_package(pybind11 CONFIG REQUIRED)
 
-# list all boost libs and add them all to the include directories by globbing
-set(BOOST_LIBS
-    accumulators
-    algorithm
-    align
-    any
-    array
-    asio
-    assert
-    assign
-    atomic
-    beast
-    bimap
-    bind
-    callable_traits
-    charconv
-    chrono
-    circular_buffer
-    cobalt
-    compat
-    compatibility
-    compute
-    concept_check
-    config
-    container
-    container_hash
-    context
-    contract
-    conversion
-    convert
-    core
-    coroutine
-    coroutine2
-    crc
-    date_time
-    describe
-    detail
-    dll
-    dynamic_bitset
-    endian
-    exception
-    fiber
-    filesystem
-    flyweight
-    foreach
-    format
-    function
-    function_types
-    functional
-    fusion
-    geometry
-    gil
-    graph
-    graph_parallel
-    hana
-    headers
-    heap
-    histogram
-    hof
-    icl
-    integer
-    interprocess
-    intrusive
-    io
-    iostreams
-    iterator
-    json
-    lambda
-    lambda2
-    leaf
-    lexical_cast
-    local_function
-    locale
-    lockfree
-    log
-    logic
-    math
-    metaparse
-    move
-    mp11
-    mpi
-    mpl
-    msm
-    multi_array
-    multi_index
-    multiprecision
-    mysql
-    nowide
-    numeric/conversion
-    optional
-    outcome
-    parameter
-    parameter_python
-    pfr
-    phoenix
-    poly_collection
-    polygon
-    pool
-    predef
-    preprocessor
-    process
-    program_options
-    property_map
-    property_map_parallel
-    property_tree
-    proto
-    ptr_container
-    python
-    qvm
-    random
-    range
-    ratio
-    rational
-    redis
-    regex
-    safe_numerics
-    scope
-    scope_exit
-    serialization
-    signals2
-    smart_ptr
-    sort
-    spirit
-    stacktrace
-    statechart
-    static_assert
-    static_string
-    stl_interfaces
-    system
-    test
-    thread
-    throw_exception
-    timer
-    tokenizer
-    tti
-    tuple
-    type_erasure
-    type_index
-    type_traits
-    typeof
-    units
-    unordered
-    url
-    utility
-    uuid
-    variant
-    variant2
-    vmd
-    wave
-    winapi
-    xpressive
-    yap)
-foreach(lib ${BOOST_LIBS})
-  include_directories(${CMAKE_SOURCE_DIR}/vendor/boost/libs/${lib}/include)
-endforeach()
+set(boost_download_url
+    "https://archives.boost.io/release/1.86.0/source/boost_1_86_0.tar.bz2")
+set(boost_download_sha256
+    "1bed88e40401b2cb7a1f76d4bab499e352fa4d0c5f31c0dbae64e24d34d7513b")
 
+# Download and unpack boost if not available
+set(boost_root "${CMAKE_BINARY_DIR}/vendor/boost")
+set(boost_tar "${CMAKE_BINARY_DIR}/boost.tar.bz2")
+file(MAKE_DIRECTORY "${boost_root}")
+file(
+  DOWNLOAD ${boost_download_url} ${boost_tar}
+  EXPECTED_HASH SHA256=${boost_download_sha256}
+  SHOW_PROGRESS)
+if(NOT EXISTS ${boost_root}/README.md)
+  message(STATUS "Extracting Boost...")
+  execute_process(COMMAND tar xjf ${boost_tar} --strip-components=1
+                  WORKING_DIRECTORY ${boost_root})
+endif()
+
+include_directories(${boost_root})
 include_directories(${CMAKE_SOURCE_DIR}/vendor/findMFBase/include)
 
 pybind11_add_module(_core MODULE src/main.cpp)
