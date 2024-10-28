@@ -26,6 +26,8 @@
 
 <!-- prettier-ignore-end -->
 
+This package provides a Python wrapper for the peak picker from [findMFBase](https://github.com/findMF/findMFBase).
+
 ## Basic usage
 
 Clone with recursive submodules, i.e. `git clone --recursive`. Pip install the
