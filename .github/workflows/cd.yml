@@ -56,7 +56,7 @@ jobs:
 
   upload_all:
     needs: [build_wheels, make_sdist]
-    environment: pypi
+    environment: pypi-publish
     permissions:
       id-token: write
     runs-on: ubuntu-latest
