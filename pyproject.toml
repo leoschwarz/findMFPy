@@ -63,7 +63,7 @@ build-dir = "build/{wheel_tag}"
 cmake.build-type = "RelWithDebInfo"
 
 [tool.cibuildwheel]
-skip = ["pp*", "cp39-*", "cp310-*", "*i686*"]
+skip = ["pp*", "cp39-*", "cp310-*", "cp311-*", "cp312-*", "*i686*"]
 test-command = "pytest {project}/tests"
 test-extras = ["test"]
 test-skip = ["*universal2:arm64"]
