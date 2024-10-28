@@ -1,14 +1,12 @@
 from __future__ import annotations
 
-from typing import Tuple
-
 import numpy as np
 import pytest
 from numpy.typing import NDArray
 
 from findmfpy import pick_peaks, pick_peaks_diagnostic
 
-SpectrumType = Tuple[NDArray[np.float64], NDArray[np.float64]]
+SpectrumType = tuple[NDArray[np.float64], NDArray[np.float64]]
 
 
 @pytest.fixture()
