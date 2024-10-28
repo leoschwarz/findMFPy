@@ -63,6 +63,7 @@ build-dir = "build/{wheel_tag}"
 cmake.build-type = "RelWithDebInfo"
 
 [tool.cibuildwheel]
+skip = ["pp*", "cp39-*", "cp310-*"]
 test-command = "pytest {project}/tests"
 test-extras = ["test"]
 test-skip = ["*universal2:arm64"]
@@ -90,7 +91,7 @@ report.exclude_also = [
 
 [tool.mypy]
 files = ["src", "tests"]
-python_version = "3.8"
+python_version = "3.9"
 warn_unused_configs = true
 strict = true
 enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
@@ -147,20 +148,3 @@ isort.required-imports = ["from __future__ import annotations"]
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["T20"]
 "noxfile.py" = ["T20"]
-
-
-[tool.pylint]
-py-version = "3.8"
-ignore-paths = [".*/_version.py"]
-extension-pkg-allow-list = ["findmfpy._core"]
-reports.output-format = "colorized"
-similarities.ignore-imports = "yes"
-messages_control.disable = [
-  "design",
-  "fixme",
-  "line-too-long",
-  "missing-module-docstring",
-  "missing-function-docstring",
-  "wrong-import-position",
-  "unpacking-non-sequence",
-]
