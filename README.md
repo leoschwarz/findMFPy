@@ -32,13 +32,11 @@ Documentation: [Quick reference](https://leoschwarz.github.io/findMFPy)
 
 ## Basic usage
 
-To install the package
+The package can be installed from PyPI using pip:
 
 ```bash
-pip install findmfpy@git+https://github.com/leoschwarz/findMFPy
+pip install findmfpy
 ```
-
-this may take a while as the package needs to be compiled.
 
 ## Developer install
 
