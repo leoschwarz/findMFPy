@@ -44,14 +44,13 @@ jobs:
       fail-fast: false
       matrix:
         # TODO add back when stable/public since it uses too many minutes right now
-        #python-version: ["3.8", "3.12"]
         #runs-on: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: ["3.8"]
+        python-version: ["3.9", "3.13"]
         runs-on: [ubuntu-latest]
 
-        include:
-          - python-version: pypy-3.10
-            runs-on: ubuntu-latest
+        #include:
+        #  - python-version: pypy-3.10
+        #    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
