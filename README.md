@@ -28,6 +28,8 @@
 
 This package provides a Python wrapper for the peak picker from [findMFBase](https://github.com/findMF/findMFBase).
 
+Documentation: [Quick reference](https://leoschwarz.github.io/findMFPy)
+
 ## Basic usage
 
 To install the package
