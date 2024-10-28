@@ -30,7 +30,16 @@ This package provides a Python wrapper for the peak picker from [findMFBase](htt
 
 ## Basic usage
 
-Clone with recursive submodules, i.e. `git clone --recursive`. Pip install the
-package, if you want to develop `pip install -e ".[dev]"`.
+To install the package
+
+```bash
+pip install findmfpy@git+https://github.com/leoschwarz/findMFPy
+```
+
+this may take a while as the package needs to be compiled.
+
+## Developer install
+
+Clone with recursive submodules, i.e. `git clone --recursive`. Pip install the package, if you want to develop `pip install -e ".[dev]"`.
 
 See `tests/test_api.py` for now.
