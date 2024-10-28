@@ -39,16 +39,15 @@ test = [
   "pytest >=6",
   "pytest-cov >=3",
 ]
-dev = [
-  "pytest >=6",
-  "pytest-cov >=3",
-  "nox"
-]
 docs = [
   "mkdocs",
   "mkdocs-material",
   "mkdocstrings[python]",
   "black"
+]
+dev = [
+  "findMFPy[test,docs]",
+  "nox"
 ]
 
 [project.urls]
